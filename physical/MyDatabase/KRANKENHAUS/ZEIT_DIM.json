@@ -1,0 +1,17 @@
+{
+  "physicalTable" : {
+    "name" : "ZEIT_DIM",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "MONAR",
+      "dataType" : "VARCHAR",
+      "length" : 9,
+      "nullable" : false
+    }, {
+      "name" : "JAHR",
+      "dataType" : "VARCHAR",
+      "length" : 4,
+      "nullable" : false
+    } ]
+  }
+}

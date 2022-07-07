@@ -1,0 +1,62 @@
+{
+  "physicalTable" : {
+    "name" : "DIAGNOSEN_DB",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "ALTER_SYNTH",
+      "dataType" : "NUMERIC",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "VERWEILDAUER",
+      "dataType" : "NUMERIC",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "JAHR",
+      "dataType" : "VARCHAR",
+      "length" : 4,
+      "nullable" : false
+    }, {
+      "name" : "GEMEINDE",
+      "dataType" : "VARCHAR",
+      "length" : 8,
+      "nullable" : false
+    }, {
+      "name" : "STERBEFALL",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : false
+    }, {
+      "name" : "OPERATION",
+      "dataType" : "VARCHAR",
+      "length" : 1,
+      "nullable" : false
+    }, {
+      "name" : "HAUPTDIAGNOSE",
+      "dataType" : "VARCHAR",
+      "length" : 3,
+      "nullable" : false
+    }, {
+      "name" : "ANZAHL_DIAGNOSEN",
+      "dataType" : "NUMERIC",
+      "length" : 0,
+      "nullable" : false
+    }, {
+      "name" : "RECORD_KEY",
+      "dataType" : "NUMERIC",
+      "length" : 0,
+      "nullable" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "physicalTable:MyDatabase.KRANKENHAUS.ZEIT_DIM",
+      "useJoinExpression" : false,
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE",
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:MyDatabase.KRANKENHAUS.DIAGNOSEN_DB.JAHR",
+        "rightColumn" : "physicalColumn:MyDatabase.KRANKENHAUS.ZEIT_DIM.JAHR"
+      } ]
+    } ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "logicalTable" : {
+    "name" : "ZEIT_DIM",
+    "type" : "DIMENSION",
+    "logicalColumns" : [ {
+      "name" : "MONAR",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ZEIT_DIM",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.KRANKENHAUS.ZEIT_DIM.MONAR" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "JAHR",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "ZEIT_DIM",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.KRANKENHAUS.ZEIT_DIM.JAHR" ]
+          }
+        } ]
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "ZEIT_DIM",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:MyDatabase.KRANKENHAUS.ZEIT_DIM" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ]
+  }
+}

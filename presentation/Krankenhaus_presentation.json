@@ -1,0 +1,11 @@
+{
+  "subjectArea" : {
+    "name" : "Krankenhaus_presentation",
+    "sourceBusinessModel" : "businessModel:Krankenhaus_logic",
+    "tableOrder" : [ {
+      "name" : "presentationTable:Krankenhaus_presentation.DIAGNOSEN_DB"
+    }, {
+      "name" : "presentationTable:Krankenhaus_presentation.ZEIT_DIM"
+    } ]
+  }
+}

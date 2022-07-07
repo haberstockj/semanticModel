@@ -1,0 +1,37 @@
+{
+  "physicalTable" : {
+    "name" : "ICD_DIM",
+    "sourceType" : "TABLE",
+    "physicalColumns" : [ {
+      "name" : "KAPITELNR",
+      "dataType" : "VARCHAR",
+      "length" : 4000,
+      "nullable" : false
+    }, {
+      "name" : "KAPITEL_BEZEICHNUNG",
+      "dataType" : "VARCHAR",
+      "length" : 110,
+      "nullable" : false
+    }, {
+      "name" : "GRUPPE_BEZEICHNUNG",
+      "dataType" : "VARCHAR",
+      "length" : 150,
+      "nullable" : false
+    }, {
+      "name" : "ICD_CODE_3",
+      "dataType" : "VARCHAR",
+      "length" : 3,
+      "nullable" : false
+    }, {
+      "name" : "COL_3STELLER_BEZ",
+      "dataType" : "VARCHAR",
+      "length" : 164,
+      "nullable" : false
+    }, {
+      "name" : "ICD_CODE_2",
+      "dataType" : "VARCHAR",
+      "length" : 3,
+      "nullable" : false
+    } ]
+  }
+}

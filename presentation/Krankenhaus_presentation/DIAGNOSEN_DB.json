@@ -1,0 +1,36 @@
+{
+  "presentationTable" : {
+    "name" : "DIAGNOSEN_DB",
+    "presentationColumns" : [ {
+      "name" : "ALTER_SYNTH",
+      "sourceLogicalColumn" : "logicalColumn:Krankenhaus_logic.DIAGNOSEN_DB.ALTER_SYNTH"
+    }, {
+      "name" : "VERWEILDAUER",
+      "sourceLogicalColumn" : "logicalColumn:Krankenhaus_logic.DIAGNOSEN_DB.VERWEILDAUER"
+    }, {
+      "name" : "JAHR",
+      "sourceLogicalColumn" : "logicalColumn:Krankenhaus_logic.DIAGNOSEN_DB.JAHR"
+    }, {
+      "name" : "GEMEINDE",
+      "sourceLogicalColumn" : "logicalColumn:Krankenhaus_logic.DIAGNOSEN_DB.GEMEINDE"
+    }, {
+      "name" : "STERBEFALL",
+      "sourceLogicalColumn" : "logicalColumn:Krankenhaus_logic.DIAGNOSEN_DB.STERBEFALL"
+    }, {
+      "name" : "OPERATION",
+      "sourceLogicalColumn" : "logicalColumn:Krankenhaus_logic.DIAGNOSEN_DB.OPERATION"
+    }, {
+      "name" : "HAUPTDIAGNOSE",
+      "sourceLogicalColumn" : "logicalColumn:Krankenhaus_logic.DIAGNOSEN_DB.HAUPTDIAGNOSE"
+    }, {
+      "name" : "ANZAHL_DIAGNOSEN",
+      "sourceLogicalColumn" : "logicalColumn:Krankenhaus_logic.DIAGNOSEN_DB.ANZAHL_DIAGNOSEN"
+    }, {
+      "name" : "RECORD_KEY",
+      "sourceLogicalColumn" : "logicalColumn:Krankenhaus_logic.DIAGNOSEN_DB.RECORD_KEY"
+    }, {
+      "name" : "Anzahl_ck_oracle",
+      "sourceLogicalColumn" : "logicalColumn:Krankenhaus_logic.DIAGNOSEN_DB.Anzahl_ck_oracle"
+    } ]
+  }
+}

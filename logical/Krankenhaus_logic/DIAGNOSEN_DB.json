@@ -1,0 +1,160 @@
+{
+  "logicalTable" : {
+    "name" : "DIAGNOSEN_DB",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "ALTER_SYNTH",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIAGNOSEN_DB",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.KRANKENHAUS.DIAGNOSEN_DB.ALTER_SYNTH" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "VERWEILDAUER",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIAGNOSEN_DB",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.KRANKENHAUS.DIAGNOSEN_DB.VERWEILDAUER" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "JAHR",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIAGNOSEN_DB",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.KRANKENHAUS.DIAGNOSEN_DB.JAHR" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "GEMEINDE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIAGNOSEN_DB",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.KRANKENHAUS.DIAGNOSEN_DB.GEMEINDE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "STERBEFALL",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIAGNOSEN_DB",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.KRANKENHAUS.DIAGNOSEN_DB.STERBEFALL" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "OPERATION",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIAGNOSEN_DB",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.KRANKENHAUS.DIAGNOSEN_DB.OPERATION" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "HAUPTDIAGNOSE",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIAGNOSEN_DB",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.KRANKENHAUS.DIAGNOSEN_DB.HAUPTDIAGNOSE" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "ANZAHL_DIAGNOSEN",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIAGNOSEN_DB",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.KRANKENHAUS.DIAGNOSEN_DB.ANZAHL_DIAGNOSEN" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "RECORD_KEY",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "DIAGNOSEN_DB",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:MyDatabase.KRANKENHAUS.DIAGNOSEN_DB.RECORD_KEY" ]
+          }
+        } ]
+      }
+    }, {
+      "name" : "Anzahl_ck_oracle",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "evaluate('GESUNDHEIT.VERAENDERUNGWERT(\"Krankenhaus_logic\".\"DIAGNOSEN_DB\".\"ANZAHL_DIAGNOSEN\",\"Krankenhaus_logic\".\"DIAGNOSEN_DB\".\"RECORD_KEY\")',%1,%2)",
+          "expressionObjects" : [ "logicalColumn:Krankenhaus_logic.DIAGNOSEN_DB.ANZAHL_DIAGNOSEN", "logicalColumn:Krankenhaus_logic.DIAGNOSEN_DB.RECORD_KEY" ]
+        }
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "DIAGNOSEN_DB",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:MyDatabase.KRANKENHAUS.DIAGNOSEN_DB" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:Krankenhaus_logic.ZEIT_DIM",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE",
+      "drivingTable" : "logicalTable:Krankenhaus_logic.DIAGNOSEN_DB"
+    } ]
+  }
+}

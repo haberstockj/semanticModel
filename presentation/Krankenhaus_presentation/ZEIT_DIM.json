@@ -1,0 +1,12 @@
+{
+  "presentationTable" : {
+    "name" : "ZEIT_DIM",
+    "presentationColumns" : [ {
+      "name" : "MONAR",
+      "sourceLogicalColumn" : "logicalColumn:Krankenhaus_logic.ZEIT_DIM.MONAR"
+    }, {
+      "name" : "JAHR",
+      "sourceLogicalColumn" : "logicalColumn:Krankenhaus_logic.ZEIT_DIM.JAHR"
+    } ]
+  }
+}
